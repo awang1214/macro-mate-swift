@@ -29,9 +29,22 @@
 		E703123B2D580FD700C7C144 /* macro-mate-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macro-mate-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E70312652D5877E800C7C144 /* Exceptions for "macro-mate-ios" folder in "macro-mate-iosUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Components/DailyMacroView.swift,
+			);
+			target = E703123A2D580FD700C7C144 /* macro-mate-iosUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E70312202D580FD600C7C144 /* macro-mate-ios */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E70312652D5877E800C7C144 /* Exceptions for "macro-mate-ios" folder in "macro-mate-iosUITests" target */,
+			);
 			path = "macro-mate-ios";
 			sourceTree = "<group>";
 		};
