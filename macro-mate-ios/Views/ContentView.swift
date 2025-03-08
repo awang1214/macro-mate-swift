@@ -8,6 +8,9 @@
 import SwiftUI
 import SwiftData
 
+// TO-DO:
+// - Add a form on initial startup that allows calculates daily goals i.e. BMR
+
 struct ContentView: View {
     @State private var selectedDate = Date()
     
