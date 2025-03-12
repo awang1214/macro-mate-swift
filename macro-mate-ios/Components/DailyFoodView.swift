@@ -14,6 +14,7 @@ import SwiftData
  */
 
 struct DailyFoodView: View { // ✅ Renamed from FoodCardView
+    @Binding var selectedDate: Date
     @Environment(\.modelContext) private var modelContext
     @Query private var foodList: [Food]
 
@@ -69,9 +70,4 @@ struct FoodItemCard: View {
         .shadow(radius: 2)
         .padding(.horizontal, 16)
     }
-}
-
-#Preview {
-    DailyFoodView()
-        .modelContainer(for: Food.self, inMemory: true)
 }

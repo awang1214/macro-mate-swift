@@ -12,7 +12,7 @@ import SwiftData
 // - Add a form on initial startup that allows calculates daily goals i.e. BMR
 
 struct ContentView: View {
-    @State private var selectedDate = Date()
+    @State private var selectedDate: Date = Date()
     
     var body: some View {
         TabView {
@@ -21,7 +21,7 @@ struct ContentView: View {
                     Image(systemName: "calendar")
                     Text("Calendar")
                 }
-            DailyView(selectedDate: selectedDate)
+            DailyView(selectedDate: $selectedDate)
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                     Text("Daily")

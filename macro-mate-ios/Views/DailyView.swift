@@ -18,17 +18,18 @@ TO-DO:
  - Add a Today Title to a button that resets page macros to the current date
  - Include a camera button to take a picture of food
  - Left middle right buttons at bottom:
- - Add weight
  - Add food
+    - Should have a search functionfor previous foods
+    - serving size modifier
+    - add food to central database
  - Camera to add food
- 
- - Add logic for Pulling in respective dates foods 
+ - Add logic for Pulling in respective dates foods
  
 */
 
 struct DailyView: View {
-    var selectedDate: Date
-
+    @Binding var selectedDate: Date
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {
@@ -38,19 +39,9 @@ struct DailyView: View {
                     .shadow(radius: 3)
 
                 // **Expandable Food List**
-                DailyFoodView()
+                DailyFoodView(selectedDate: $selectedDate)
                     .padding(.horizontal, 16)
 
-                // **Bottom Action Buttons**
-//                HStack {
-//                    ActionButton(icon: "scalemass", text: "Add Weight") {
-//                        // Add weight action
-//                    }
-//                    Spacer()
-//                    ActionButton(icon: "camera", text: "Camera") {
-//                        // Camera action
-//                    }
-//                }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 10)
             }
@@ -91,6 +82,6 @@ struct ActionButton: View {
 }
 
 #Preview {
-    DailyView(selectedDate: Date())
+    DailyView(selectedDate: .constant(Date()))
         .modelContainer(for: [Food.self, Profile.self, WeightEntry.self], isAutosaveEnabled: true)
 }
